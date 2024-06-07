@@ -26,7 +26,7 @@ function Earth() {
 
     return (
         <>
-            <ambientLight intensity={2} />
+            <ambientLight intensity={4} />
             <pointLight color="#f6f3ea" position={[2, 0, 2]} intensity={1.2} />
             <Stars radius={300}
                 depth={60}
@@ -37,7 +37,7 @@ function Earth() {
             <mesh ref={cloudsRef}>
                 <sphereGeometry args={[1.01, 32, 32]} />
                 <meshPhongMaterial map={cloudsMap}
-                    opacity={0.4}
+                    opacity={0.5}
                     depthWrite={true}
                     transparent={true}
                     side={THREE.DoubleSide} />
@@ -47,14 +47,14 @@ function Earth() {
                 <meshPhongMaterial specularMap={specularMap} />
                 <meshStandardMaterial map={colorMap}
                     normalMap={normalMap}
-                    metalness={0.4}
+                    metalness={0.3}
                     roughness={0.7} />
                 <OrbitControls enableZoom={true}
                     enablePan={true}
                     enableRotate={true}
                     zoomSpeed={0.6}
                     panSpeed={0.5}
-                    rotateSpeed={0.4}
+                    rotateSpeed={0.3}
                 />
             </mesh>
         </>
